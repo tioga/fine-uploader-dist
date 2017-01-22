@@ -5355,7 +5355,7 @@
             params[spec.chunking.paramNames.totalParts] = handler._getTotalChunks(id);
             return params;
         }, isErrorUploadResponse = function(xhr, response) {
-            return qq.indexOf([ 200, 201, 202, 203, 204 ], xhr.status) < 0 || !response.success || response.reset;
+            return qq.indexOf([ 200, 201, 202, 203, 204 ], xhr.status) < 0 || response.success === false || response.reset;
         }, onUploadOrChunkComplete = function(id, xhr) {
             var response;
             log("xhr - server response received for " + id);
